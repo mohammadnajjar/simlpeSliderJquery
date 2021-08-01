@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Tutorial </title>
+
+	<style type="text/css">
+		.main-cont{
+			margin: auto;
+			padding: 10px;
+			width: 80%;
+		}
+		.u-list{
+			width: 25%;
+			display: inline-block;
+			list-style: none;
+			box-shadow: 2px 2px 7px gray;
+			margin: 10px;
+			padding: 20px;
+		}
+		.u-list li{
+			padding-bottom: 10px;
+		}
+	</style>
+
+
+	<script src="jquery-3.4.1.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("ul li:first-child").mouseenter(function(){
+				$("ul li:first-child").css("backgroundColor","lightgreen");
+				$("ul li:first-child").css("color","green");
+				$(this).css("fontWeight","bold");
+			});
+			$("ul li:first-child").mouseout(function(){
+				$("ul li:first-child").css("backgroundColor","");
+				$("ul li:first-child").css("color","navy");
+			});
+
+
+			$("ul li:nth-child(even)").mouseenter(function(){
+				$(this).css("backgroundColor","pink");
+				$(this).css("color","purple");
+				$(this).css("fontWeight","bold");
+			});
+			$("ul li:nth-child(even)").mouseout(function(){
+				$(this).css("backgroundColor","");
+				$(this).css("color","navy");
+			});
+		});
+	</script>
+	
+</head>
+
+<body>
+
+	<div class="main-cont">
+		<ul class="u-list">
+			<li>First elem</li>
+			<li>Second elem</li>
+			<li>Third Elem</li>
+		</ul>
+		<ul class="u-list">
+			<li>First elem</li>
+			<li>Second elem</li>
+			<li>Third Elem</li>
+		</ul>
+		<ul class="u-list">
+			<li>First elem</li>
+			<li>Second elem</li>
+			<li>Third Elem</li>
+		</ul>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Tutorial </title>
+	<style type="text/css">
+		p{
+			padding: 0px;
+			margin: 0px;
+		}
+	</style>
+	<script src="jquery-3.4.1.min.js"></script>
+
+	<script type="text/javascript">
+			
+	$(function(){
+			$("button").click(function(){
+			  var div = $("div");
+			  // for(var i=0 ; i<3; i++){
+				  div.animate({opacity: '0.4',fontSize: '2em'}, "fast");  //slow ,fast ,hide
+				  div.animate({opacity: '0.8',fontSize: '3em'}, "slow");
+				  div.animate({opacity: '0.4',fontSize: '2em'}, "fast");
+				  div.animate({opacity: '0.8',fontSize: '3em'}, "slow");
+			  // }
+
+			}); 
+		
+			$(".del").click(function(){
+				 var f =  $("div").first();
+					f.nextAll().empty();
+					f.remove();
+			});
+
+		});
+	</script>
+	
+</head>
+
+<body>
+
+
+	<button>start Animation !</button>
+	<input type="button" class="del" value="Delete vs Empty !"></input>
+	<div style="border-radius:25% 25% 100% 100%; position: absolute; left: 50px; top: 50px; background-color: red; padding: 10px; font-weight: bold; font-size: 50px; color: maroon;">
+		<p>Top</p>
+	</div>
+	<div style="border-radius:25%; position: absolute; left: 100px; top: 150px; background-color: lightblue; padding: 10px; font-weight: bold; font-size: 50px; color: navy;">
+		<p>Div</p>
+	</div>
+	
+	<div style="border-radius:15% 65%; position: absolute; left: 150px; top: 250px; background-color: lightgreen; padding: 10px; font-weight: bold; font-size: 50px; color: green;">
+		<p>Left</p>
+	</div>
+
+
+</body>
+</html>

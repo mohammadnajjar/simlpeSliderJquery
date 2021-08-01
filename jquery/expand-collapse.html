@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Tutorial </title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script src="jquery-3.4.1.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".sub-tr").hide();
+
+			$(".Expand-All").click(function(){
+				$(".sub-tr").show();
+			});
+
+			$(".Collapse-All").click(function(){
+				$(".sub-tr").hide();
+			});
+
+			$(".expander").mouseenter(function(){
+				$(this).css("color","red");	//css attribute
+			});
+			$(".expander").mouseout(function(){
+				$(this).css("color","navy");
+			});
+
+			$(".expander").click(function(){
+					console.log($(this).parent()); 	//direct parent
+					console.log( $(this).parents("tr")); //parent whose <tr>
+					var courseId =  $(this).parents("tr").attr("courseId"); // filter with [attrib]
+					console.log(courseId);
+					console.log( "[for="+courseId+"]");
+				if(!$(this).hasClass("expanded")){
+					$("[for="+courseId+"]").fadeIn(2000);
+					$(this).addClass("expanded");
+				}
+				else{
+					
+					$("[for="+courseId+"]").fadeOut(2000);
+					$(this).removeClass("expanded");
+				}
+			});
+
+		});
+	</script>
+	
+</head>
+
+<body>
+
+	<div class="container">
+	<fieldset>
+	<legend>Control Panel</legend>
+		<button class="Expand-All">
+			Expand All
+		</button>
+		<button class="Collapse-All"">
+			Collapse All
+		</button>
+		</fieldset>
+	</div>
+
+<div class="table-container">
+<table class="table" id="mark-table">
+<tr class="thead" courseId="1">
+	<td  class="course-td" colspan="3">Arabic</td>
+	<td><span class="expander">&raquo;</span></td>
+</tr>
+
+<tr class="sub-tr" for="1">
+	<td>1</td>
+	<td>Rama</td>
+	<td>600</td>
+	<td>600</td>
+</tr>
+<tr class="sub-tr"  for="1">
+	<td>2</td>
+	<td>Laila</td>
+	<td>570</td>
+	<td>600</td>
+</tr>
+<tr class="sub-tr" for="1">
+	<td>3</td>
+	<td>Iman</td>
+	<td>540</td>
+	<td>600</td>
+</tr>
+<tr class="sub-tr" for="1">
+	<td>4</td>
+	<td>Ali</td>
+	<td>500</td>
+	<td>600</td>
+</tr>
+
+
+<tr class="thead" courseId="2">
+	<td class="course-td" colspan="3">English</td>
+	<td><span class="expander">&raquo;</span></td>
+</tr>
+<tr class="sub-tr" for="2">
+	<td>1</td>
+	<td>Rama</td>
+	<td>60</td>
+	<td>100</td>
+</tr>
+<tr class="sub-tr" for="2">
+	<td>2</td>
+	<td>Laila</td>
+	<td>75</td>
+	<td>100</td>
+</tr>
+<tr class="sub-tr" for="2">
+	<td>3</td>
+	<td>Iman</td>
+	<td>67</td>
+	<td>100</td>
+</tr>
+<tr class="sub-tr" for="2">
+	<td>4</td>
+	<td>Ali</td>
+	<td>50</td>
+	<td>100</td>
+</tr>
+
+<tr class="thead" courseId="3">
+	<td class="course-td" colspan="3">Math</td>
+	<td><span class="expander">&raquo;</span></td>
+</tr>
+<tr class="sub-tr" for="3">
+	<td>1</td>
+	<td>Rama</td>
+	<td>60</td>
+	<td>100</td>
+</tr>
+<tr class="sub-tr" for="3">
+	<td>2</td>
+	<td>Laila</td>
+	<td>75</td>
+	<td>100</td>
+</tr>
+<tr class="sub-tr" for="3">
+	<td>3</td>
+	<td>Iman</td>
+	<td>67</td>
+	<td>100</td>
+</tr>
+<tr class="sub-tr" for="3">
+	<td>4</td>
+	<td>Ali</td>
+	<td>50</td>
+	<td>100</td>
+</tr>
+
+</table>
+</div>
+	
+
+</body>
+</html>
